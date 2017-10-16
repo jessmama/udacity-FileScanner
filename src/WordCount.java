@@ -8,14 +8,18 @@ public class WordCount {
         int wordsCount=0;
 
         File file =new File("TwoCities.txt");
-        Scanner filescanner=new Scanner(file);
 
-        while(filescanner.hasNextLine()){
-            line=filescanner.nextLine();
-            String[] words = line.split(" ");
-            wordsCount=wordsCount+words.length;
+        try{
+            Scanner filescanner=new Scanner(file);
+            while(filescanner.hasNextLine()){
+                line=filescanner.nextLine();
+                String[] words = line.split(" ");
+                wordsCount=wordsCount+words.length;
+            }
+            System.out.println("Total words count is :" + wordsCount);
+        } catch(FileNotFoundException exception) {
+            // Handle the situation by letting the user know what happened
+            System.out.println("Cannot find that file:TwoCities.txt");
         }
-        System.out.println("Total words count is :" + wordsCount);
-       
     }
 }
