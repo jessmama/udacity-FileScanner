@@ -6,9 +6,7 @@ public class WordCount {
     public static void main(String[] args) throws FileNotFoundException {
         String line="";
         int wordsCount=0;
-
         File file =new File("TwoCities.txt");
-
         try{
             Scanner filescanner=new Scanner(file);
             while(filescanner.hasNextLine()){
